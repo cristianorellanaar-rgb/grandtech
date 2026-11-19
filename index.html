@@ -112,6 +112,16 @@ header.scrolled{background:rgba(2,11,34,.85);backdrop-filter:blur(14px);border-c
 .case{padding:28px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
 .case .kind{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:6px;font-family:Montserrat,sans-serif}
 .case p{color:var(--muted);font-size:.95rem;margin-top:6px}
+.clients{margin-top:38px;position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.clients-track{display:flex;gap:18px;width:max-content;animation:clients-scroll 38s linear infinite}
+.clients:hover .clients-track{animation-play-state:paused}
+@keyframes clients-scroll{to{transform:translateX(calc(-50% - 9px))}}
+.client{flex:0 0 auto;width:230px;height:110px;border-radius:16px;background:#f4f7ff;border:1px solid #dfe7fb;display:flex;align-items:center;justify-content:center;padding:16px 20px;text-align:center}
+.client img{max-width:100%;max-height:70px;object-fit:contain}
+.client span{font-family:Montserrat,sans-serif;font-weight:800;font-size:1rem;line-height:1.2;color:#0b2257;letter-spacing:.01em}
+.client small{display:block;font-weight:600;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#4a5f8f;margin-top:4px}
+@media (max-width:760px){.client{width:180px;height:92px;padding:12px 14px}.client span{font-size:.9rem}}
+@media (prefers-reduced-motion:reduce){.clients{-webkit-mask-image:none;mask-image:none}.clients-track{flex-wrap:wrap;width:auto;justify-content:center}.clients-track [aria-hidden=true]{display:none}}
 
 /* Reviews */
 .reviews{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:center;padding:40px}
@@ -188,6 +198,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <a href="#servicios">Servicios</a>
       <a href="#como-trabajo">Cómo trabajo</a>
       <a href="#trabajos">Trabajos</a>
+      <a href="#clientes">Clientes</a>
       <a href="#opiniones">Opiniones</a>
       <a href="#contacto" class="btn btn-primary">Pedir presupuesto</a>
     </nav>
@@ -272,6 +283,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
       <article class="card case reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4.3 12.5 3.5 3.5 0 0 0 6 19z"/></svg></div><div><div class="kind">Empresa industrial</div><h3>De un servidor lento a archivos en la nube</h3><p>Migración de un NAS a SharePoint y OneDrive, con acceso seguro desde cualquier lugar.</p></div></article>
       <article class="card case reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><div><div class="kind">Atención al cliente</div><h3>Central telefónica IP</h3><p>Central Issabel con internos, grupos de llamada y menú de atención para derivar cada consulta.</p></div></article>
       <article class="card case reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="kind">Marca industrial</div><h3>Sitio web, dominio y correo</h3><p>Sitio web nuevo, dominio propio, correo con reenvío y alta en Google para una marca de pinturas.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section id="clientes" style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">Clientes</div><h2>Empresas e instituciones <span class="hl">que confían.</span></h2></div>
+    <div class="clients reveal" role="region" aria-label="Clientes de Grand Tech">
+      <div class="clients-track">
+        <div class="client"><span>CABOSCH<small>S.A.</small></span></div>
+        <div class="client"><span>Contaya<small>Estudio contable</small></span></div>
+        <div class="client"><span>Ministerio Presencia de Dios</span></div>
+        <div class="client"><span>Justo y Martínez<small>S.A.</small></span></div>
+        <div class="client"><span>Colegio Presencia de Dios</span></div>
+        <div class="client"><span>SVA<small>Concesionario</small></span></div>
+        <div class="client"><span>Petrolera COPSA<small>S.A.</small></span></div>
+        <div class="client" aria-hidden="true"><span>CABOSCH<small>S.A.</small></span></div>
+        <div class="client" aria-hidden="true"><span>Contaya<small>Estudio contable</small></span></div>
+        <div class="client" aria-hidden="true"><span>Ministerio Presencia de Dios</span></div>
+        <div class="client" aria-hidden="true"><span>Justo y Martínez<small>S.A.</small></span></div>
+        <div class="client" aria-hidden="true"><span>Colegio Presencia de Dios</span></div>
+        <div class="client" aria-hidden="true"><span>SVA<small>Concesionario</small></span></div>
+        <div class="client" aria-hidden="true"><span>Petrolera COPSA<small>S.A.</small></span></div>
+      </div>
     </div>
   </div>
 </section>
